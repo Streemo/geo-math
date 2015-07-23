@@ -2,7 +2,7 @@
 
 ~ < 10^2 lines.
 
-**Goal**: Provide a minimal set of commonly needed geolocation functions using the small angle approximation, two main methods, 6 utility methods.
+**Goal**: Provide a minimal set of commonly needed geolocation functions using the small angle approximation; two main methods, and a handful of trivial (but useful) utility methods.
 
 **What About Large Distances?**: Distances on the order of city or state level will not need exact formulas to get accurate results. We gain performance by sacrificing unnecessary precision. 
 
@@ -15,9 +15,11 @@
 
 Global Object: `GeoMath`
 
+Main methods: `distance`, `randomCoords`
+
 Meta methods: `setUnits`, `getUnits`
 
-Utility methods: `randomReal`, `toRadians`, `toDegrees`, `toCanonicalCoords`, `toMongoCoords`, `distance`, `randomCoords`
+Basic utility methods: `randomReal`, `toRadians`, `toDegrees`, `toCanonicalCoords`, `toMongoCoords`, 'toMiles', 'toKm'
 
 ####Setting units, default is SI.
 ```
@@ -45,6 +47,8 @@ GeoMath.toCanonicalCoords(mongoDBloc)
 
 ####Converting lat/lng or canonical coords to MongoDB form.
 This is analagous to the above code, but we use `GeoMath.toMongoCoords` instead.
+
+####Converting bete
 
 
 ####Distance between two points.
@@ -79,5 +83,4 @@ var cc_random = GeoMath.randomCoords(cc_center, max_dist, min_dist)
 
 #### Utility functions need in the other functions.
 You can use `GeoMath.randomReal(min,max)` to get a random real number between `min` and `max`.
-You can use `GeoMath.getUnits()` to return `"SI"` or `"US"` depending on the units GeoMath is currently using.
-Finally, functions are provided to convert between degrees and radians.
+You can use `GeoMath.getUnits()` to return the current units `GeoMath` is using. Functions are provided to convert between degrees and radians and between km and miles.
