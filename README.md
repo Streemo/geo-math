@@ -60,6 +60,12 @@ var dist = GeoMath.distance(cc1, cc2)
 
 ```
 
+####Random coordinates
+```
+//calling randomCoords with no args will generate a random canonical coordinate point on earth.
+var cc_random = GeoMath.randomCoords();
+```
+
 ####Random coordinates in a circle around your location.
 ```
 //you can get a random coordinate pair around another one.
