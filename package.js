@@ -1,6 +1,6 @@
 Package.describe({
   name: 'streemo:geo-math',
-  version: '0.0.3',
+  version: '0.0.4',
   summary: 'Minimal package that provides simple geolocation helper functions for short distances.',
   git: 'https://github.com/Streemo/geo-math',
   documentation: 'README.md'
